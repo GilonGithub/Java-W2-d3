@@ -30,7 +30,12 @@ public class Book {
 	}
 	
 	public void setPrice(double price) {
-		this.price = price;
+		
+		if(price > 0) {
+			this.price = price;
+		} else {
+			this.price = 1;
+		}
 	}
 	
 	public void setTitle(String t) {
