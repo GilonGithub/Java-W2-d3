@@ -5,8 +5,10 @@ public class Book {
 	private String authorFirstName;
 	private String authorLastName;
 	private int year;
+	private double price;
 	
-	public Book(String t, String f, String l, int y) {
+	
+	public Book(String t, String f, String l, int y, double price) {
 		
 		if(t == "") title = "Unknown"; else title = t;
 		if(f == "") authorFirstName = "Unknown"; else authorFirstName = f;
@@ -14,7 +16,21 @@ public class Book {
 		if(y <= 1900) {
 			year = 1900;
 		} else year = y;
+		
+		if(price > 0) {
+			this.price = price;
+		} else {
+			this.price = 1;
+		}
 	
+	}
+	
+	public double getTotal() {
+		return this.price * 1.12;
+	}
+	
+	public void setPrice(double price) {
+		this.price = price;
 	}
 	
 	public void setTitle(String t) {
