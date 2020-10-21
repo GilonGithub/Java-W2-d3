@@ -39,19 +39,21 @@ public class Book {
 	}
 	
 	public void setTitle(String t) {
-		title = t;
+		if(t == "") title = "Unknown"; else title = t;
 	}
 	
 	public void setAuthorFName(String fName) {
-		authorFirstName = fName;
+		if(fName == "") authorFirstName = "Unknown"; else authorFirstName = fName;
 	}
 	
 	public void setAuthorLName(String lName) {
-		authorLastName = lName;
+		if(lName == "") authorLastName = "Unknown"; else authorLastName = lName;
 	}
 	
 	public void setYear(int y) {
-		year = y;
+		if(y <= 1900) {
+			year = 1900;
+		} else year = y;
 	}
 	
 	public String getTitle() {
